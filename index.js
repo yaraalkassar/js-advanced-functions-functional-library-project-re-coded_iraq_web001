@@ -23,19 +23,19 @@ const fi = (function() {
 
     reduce: function() {
       function(collection, callback, acc) {
-            let i;
+      let i;
 
-            if (acc || acc === 0) {
-              i = 0;
-            } else {
-              i = 1;
-              acc = collection[0];
-            }
+      if (acc || acc === 0) {
+        i = 0;
+      } else {
+        i = 1;
+        acc = collection[0];
+      }
 
-            acc.forEach(num =>{
-              acc = callback(acc, collection[i], collection)
-            })
-            return acc;
+      for (; i < collection.length; i++) {
+        acc = callback(acc, collection[i], collection)
+      }
+      return acc;
     },
 
     functions: function() {
