@@ -24,14 +24,14 @@ const fi = (function() {
     reduce: function() {
       function(collection, callback, acc) {
             let i;
-      
+
             if (acc || acc === 0) {
               i = 0;
             } else {
               i = 1;
               acc = collection[0];
             }
-      
+
             acc.forEach(num =>{
               acc = callback(acc, collection[i], collection)
             })
