@@ -5,7 +5,11 @@ const fi = (function() {
     },
 
     each: function() {
-
+      function(collection, callback) {
+            for (const keyOrIndex in collection) {
+              callback(collection[keyOrIndex], keyOrIndex, collection)
+            }
+            return collection
     },
 
     map: function() {
